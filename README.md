@@ -37,6 +37,11 @@ You can access the live version of this application here:
 
    Open the `index.html` file directly in your browser.
 
+4. **PWA Usage (Optional):**
+
+   - This application includes a `manifest.json` file. On compatible browsers and devices, you can install the app as a PWA (Progressive Web App).
+   - Simply use your browser’s **Add to Home Screen** or **Install** option when prompted.
+
 ## Usage
 
 1. **Start the Timer:**  
@@ -55,6 +60,7 @@ You can access the live version of this application here:
 ## Project Structure
 
 - `index.html`: Main HTML file that contains the application structure and links to the JavaScript and CSS files.
+- `manifest.json`: Contains metadata for Progressive Web App features, enabling the app to be installable on supported devices.
 - `script.js`: Contains the timer functionality and alarm sound generation using Tone.js.
 - `style.css`: Provides the styling for the application.
 - `README.md`: This documentation file.
