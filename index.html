@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <title>Post-Set-Timer</title>
@@ -9,23 +8,48 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <script src="https://unpkg.com/tone"></script>
 </head>
-
 <body>
   <div class="container">
     <h1>Post-Set-Timer</h1>
     <div id="controls">
       <button id="startButton">Start Timer</button>
-      <div id="timeInputContainer">
-        <label for="timerDuration">Duration (sec): </label>
-        <input type="number" id="timerDuration" min="1" value="60">
-        <button id="setButton">Set Duration</button>
+      <button id="pauseButton" disabled>Pause</button>
+      <!-- キーパッドによる時間入力。タイマー開始後に表示 -->
+      <div id="timeInputContainer" style="visibility: hidden;">
+        <div id="keypadDisplay">0</div>
+        <div id="keypad">
+          <div class="keypad-row">
+            <button class="keypad-button">1</button>
+            <button class="keypad-button">2</button>
+            <button class="keypad-button">3</button>
+          </div>
+          <div class="keypad-row">
+            <button class="keypad-button">4</button>
+            <button class="keypad-button">5</button>
+            <button class="keypad-button">6</button>
+          </div>
+          <div class="keypad-row">
+            <button class="keypad-button">7</button>
+            <button class="keypad-button">8</button>
+            <button class="keypad-button">9</button>
+          </div>
+          <div class="keypad-row">
+            <button class="keypad-button" id="keypadClear">C</button>
+            <button class="keypad-button">0</button>
+            <button class="keypad-button" id="keypadSet">Set</button>
+          </div>
+        </div>
       </div>
       <button id="resetButton" disabled>Reset Timer</button>
     </div>
     <div id="display">Elapsed Time: 00:00</div>
+    <!-- 円形プログレスインジケータ -->
+    <svg id="progressCircle" width="200" height="200">
+      <circle cx="100" cy="100" r="90" stroke="#6A5A6E" stroke-width="10" fill="none"/>
+      <circle id="progressIndicator" cx="100" cy="100" r="90" stroke="#FFD700" stroke-width="10" fill="none" stroke-dasharray="565.48" stroke-dashoffset="565.48" transform="rotate(-90 100 100)"/>
+    </svg>
     <div id="message"></div>
   </div>
   <script src="script.js"></script>
 </body>
-
 </html>

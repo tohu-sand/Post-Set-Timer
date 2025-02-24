@@ -1,101 +1,118 @@
-    /* Elegant background */
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Roboto', sans-serif;
-        background: linear-gradient(135deg, #1C1C2E, #2F3A4A);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        color: #E3E3E3;
-        transition: background 0.5s ease-in-out;
-    }
+/* Elegant background */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1C1C2E, #2F3A4A);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #E3E3E3;
+    transition: background 0.5s ease-in-out;
+}
 
-    /* Stylish container */
-    .container {
-        background: rgba(255, 255, 255, 0.08);
-        padding: 2rem;
-        border-radius: 12px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        text-align: center;
-        max-width: 400px;
-        width: 90%;
-        min-height: 350px;
-    }
+/* Stylish container */
+.container {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    min-height: 350px;
+}
 
-    h1 {
-        margin-bottom: 1.5rem;
-        font-size: 2rem;
-        font-weight: 700;
-    }
+h1 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
 
-    /* Timer display */
-    #display {
-        font-size: 3rem;
-        margin: 1.5rem 0;
-        padding: 0.5rem;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-    }
+/* Timer display */
+#display {
+    font-size: 3rem;
+    margin: 1.5rem 0;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
 
-    /* Brighter buttons */
-    button {
-        background: #5A5A6E;
-        /* Slightly brighter gray */
-        border: none;
-        border-radius: 5px;
-        color: #FFF;
-        padding: 0.75rem 1.5rem;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
-        margin: 0.5rem;
-    }
+/* Brighter buttons */
+button {
+    background: #5A5A6E;
+    border: none;
+    border-radius: 5px;
+    color: #FFF;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    margin: 0.5rem;
+}
 
-    button:hover {
-        background: #6A6A7E;
-        transform: scale(1.05);
-        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
-    }
+button:hover {
+    background: #6A6A7E;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
 
-    /* Styled input */
-    input[type="number"] {
-        padding: 0.5rem;
-        font-size: 1rem;
-        border-radius: 5px;
-        border: 1px solid #666;
-        background: rgba(255, 255, 255, 0.1);
-        color: #E3E3E3;
-        width: 80px;
-        margin-right: 0.5rem;
-    }
+/* Fix message height to prevent shifting */
+#message {
+    font-size: 1.8rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
 
-    #timeInputContainer {
-        margin-top: 1rem;
-        visibility: hidden;
-    }
+/* Time's Up! - Strong Red Alert */
+.time-up-bg {
+    background: #D32F2F !important;
+}
 
-    /* Fix message height to prevent shifting */
-    #message {
-        font-size: 1.8rem;
-        height: 2.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 600;
-    }
+.time-up-message {
+    color: #FFD700 !important;
+}
 
-    /* Time's Up! - Strong Red Alert */
-    .time-up-bg {
-        background: #D32F2F !important;
-        /* Bright red background */
-    }
+/* キーパッド表示 */
+#keypadDisplay {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem;
+  border-radius: 5px;
+}
 
-    .time-up-message {
-        color: #FFD700 !important;
-        /* Gold text */
-    }
+#keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.keypad-button {
+  background: #5A5A6E;
+  border: none;
+  border-radius: 5px;
+  color: #FFF;
+  padding: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.keypad-button:hover {
+  background: #6A6A7E;
+  transform: scale(1.05);
+}
+
+/* 円形プログレス表示 */
+#progressCircle {
+  margin: 1.5rem auto;
+  display: block;
+}
